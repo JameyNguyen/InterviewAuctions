@@ -40,7 +40,16 @@ class BidRequest(BaseModel):
 
 
 class CreateListingRequest(BaseModel):
+    model_config = ConfigDict(
+        populate_by_name=True,
+        alias_generator=to_camel,
+    )
+    
     title: str
+    description: str
+    category: Literal["tractor", "combine", "implement", "attachment"]
+    starting_price: float
+    ends_at: str
 
 
 # ============================================================
@@ -85,17 +94,32 @@ def get_listings():
 def create_listing(body: CreateListingRequest):
     if not body.title or not body.title.strip():
         raise HTTPException(status_code=400, detail="Title is required")
+    if not body.description or not body.description.strip():
+        raise HTTPException(status_code=400, detail="Description is required")
+    if body.starting_price < 0:
+        raise HTTPException(status_code=400, detail="Starting price must be a positive number")
+
+    try:
+        ends_at = datetime.fromisoformat(body.ends_at.replace("Z", "+00:00"))
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Auction end date must be a valid ISO date")
+
+    if ends_at.tzinfo is None:
+        ends_at = ends_at.replace(tzinfo=timezone.utc)
+
+    if ends_at <= datetime.now(timezone.utc):
+        raise HTTPException(status_code=400, detail="Auction end date must be in the future")
 
     listing = Listing(
         id=str(uuid.uuid4()),
         title=body.title.strip(),
-        description="",
-        category="implement",
-        starting_price=0,
-        current_bid=0,
+        description=body.description.strip(),
+        category=body.category,
+        starting_price=body.starting_price,
+        current_bid=body.starting_price,
         current_bidder=None,
         status="active",
-        ends_at=(datetime.now(timezone.utc) + timedelta(days=7)).isoformat(),
+        ends_at=ends_at.astimezone(timezone.utc).isoformat(),
         image_url="",
     )
     listings.append(listing)
