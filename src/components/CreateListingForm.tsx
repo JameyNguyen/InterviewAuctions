@@ -25,9 +25,9 @@ export default function CreateListingForm({ onSuccess }: Props) {
     const title = (data.get("title") as string).trim();
     const description = (data.get("description") as string).trim();
     const category = (data.get("category") as string).trim();
-    const startingPrice = parseFloat(data.get("startingPrice") as string);
-    const endsAtRaw = (data.get("endsAt") as string).trim();
-    const endsAt = new Date(endsAtRaw);
+    const starting_price = parseFloat(data.get("starting_price") as string);
+    const endsAtRaw = (data.get("ends_at") as string).trim();
+    const ends_at = new Date(endsAtRaw);
 
     if (!title) {
       setError("Title is required.");
@@ -41,15 +41,15 @@ export default function CreateListingForm({ onSuccess }: Props) {
       setError("Category is required.");
       return;
     }
-    if (isNaN(startingPrice) || startingPrice < 0) {
+    if (isNaN(starting_price) || starting_price < 0) {
       setError("Starting price must be a positive number.");
       return;
     }
-    if (!endsAtRaw || isNaN(endsAt.getTime())) {
+    if (!endsAtRaw || isNaN(ends_at.getTime())) {
       setError("Auction end date is required.");
       return;
     }
-    if (endsAt.getTime() <= Date.now()) {
+    if (ends_at.getTime() <= Date.now()) {
       setError("Auction end date must be in the future.");
       return;
     }
@@ -60,8 +60,8 @@ export default function CreateListingForm({ onSuccess }: Props) {
         title,
         description,
         category: category as Listing["category"],
-        startingPrice,
-        endsAt: endsAt.toISOString(),
+        starting_price,
+        ends_at: ends_at.toISOString(),
       });
       onSuccess(listing);
       e.currentTarget.reset();
@@ -107,10 +107,10 @@ export default function CreateListingForm({ onSuccess }: Props) {
         </select>
       </div>
       <div className="bid-form__field">
-        <label htmlFor="startingPrice">Starting Price ($)</label>
+        <label htmlFor="starting_price">Starting Price ($)</label>
         <input
-          id="startingPrice"
-          name="startingPrice"
+          id="starting_price"
+          name="starting_price"
           type="number"
           min={0}
           step={1}
@@ -119,10 +119,10 @@ export default function CreateListingForm({ onSuccess }: Props) {
         />
       </div>
       <div className="bid-form__field">
-        <label htmlFor="endsAt">Auction End Date</label>
+        <label htmlFor="ends_at">Auction End Date</label>
         <input
-          id="endsAt"
-          name="endsAt"
+          id="ends_at"
+          name="ends_at"
           type="datetime-local"
           disabled={submitting}
         />
