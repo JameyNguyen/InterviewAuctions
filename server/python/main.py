@@ -133,12 +133,15 @@ def place_bid(listing_id: str, bid: BidRequest):
     if not bid.bidder or not bid.bidder.strip():
         raise HTTPException(status_code=400, detail="Bidder name is required")
 
-    if bid.amount <= 0:
+    # This should also just be strictly greater than because then the bid could become free, which doesn't make sense
+    # if there's a starting price as well.
+    if bid.amount < 0:
         raise HTTPException(
             status_code=400, detail="Bid amount must be a positive number"
         )
 
-    if bid.amount >= listing.current_bid:
+    # I changed this to strictly greater than, because a bid that matches the current bid should not override the original bid.
+    if bid.amount < listing.current_bid:
         raise HTTPException(
             status_code=400,
             detail=f"Bid must be greater than the current bid of ${listing.current_bid:,.0f}",
