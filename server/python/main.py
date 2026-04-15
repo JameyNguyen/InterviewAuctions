@@ -61,6 +61,13 @@ listings: list[Listing] = [
     Listing(**item) for item in json.loads(_data_file.read_text())
 ]
 
+# Created by Jamey
+# Helper function to save the created listings to the JSON file.
+# It should get called at the creation of every new listing, or update the existing listing when a new bid is placed.
+def save_listings():
+    data = [item.model_dump(by_alias=True) for item in listings]
+    _data_file.write_text(json.dumps(data, indent="\t"))
+
 # ============================================================
 # App
 # ============================================================
@@ -123,6 +130,7 @@ def create_listing(body: CreateListingRequest):
         image_url="",
     )
     listings.append(listing)
+    save_listings()
     return listing
 
 
@@ -172,6 +180,7 @@ def place_bid(listing_id: str, bid: BidRequest):
         )
 
     listing.current_bid = bid.amount
+    save_listings()
     listing.current_bidder = bid.bidder.strip()
 
     return listing
