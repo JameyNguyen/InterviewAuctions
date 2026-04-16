@@ -6,7 +6,7 @@
 		"category": "tractor",
 		"startingPrice": 185000.0,
 		"currentBid": 220000.0,
-		"currentBidder": "Evil Jamey",
+		"currentBidder": "Jamey",
 		"status": "active",
 		"endsAt": "2026-04-11T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2019+John+Deere+8R+340+Tractor",
@@ -143,7 +143,7 @@
 		"description": "Hello guys",
 		"category": "combine",
 		"startingPrice": 12345.0,
-		"currentBid": 150000.0,
+		"currentBid": 151000.0,
 		"currentBidder": "test",
 		"status": "active",
 		"endsAt": "2026-04-17T14:00:00+00:00",
@@ -158,6 +158,11 @@
 				"bidderName": "test",
 				"amount": 150000.0,
 				"placedAt": "2026-04-16T01:11:56.442295+00:00"
+			},
+			{
+				"bidderName": "LastTest",
+				"amount": 151000.0,
+				"placedAt": "2026-04-16T01:27:18.619695+00:00"
 			}
 		]
 	}
