@@ -79,6 +79,17 @@ def save_listings():
     data = [item.model_dump(by_alias=True) for item in listings]
     _data_file.write_text(json.dumps(data, indent="\t"))
 
+def expire_listings() -> None:
+    now = datetime.now(timezone.utc)
+    updated = False
+    for listing in listings:
+        if listing.status == "active":
+            ends_at = datetime.fromisoformat(listing.ends_at.replace("Z", "+00:00"))
+            if ends_at <= now:
+                listing.status = "closed"
+                updated = True
+    if updated:
+        save_listings()
 # ============================================================
 # App
 # ============================================================
@@ -103,6 +114,7 @@ def get_listings(
     search: Optional[str] = Query(None),
     category: Optional[str] = Query(None),
 ):
+    expire_listings()
     filtered = listings
     
     # Filter by category if provided
@@ -171,6 +183,7 @@ def create_listing(body: CreateListingRequest):
     response_model_by_alias=True,
 )
 def get_listing(listing_id: str):
+    expire_listings()
     listing = next((l for l in listings if l.id == listing_id), None)
     if listing is None:
         raise HTTPException(status_code=404, detail="Listing not found")
@@ -195,6 +208,8 @@ def place_bid(listing_id: str, bid: BidRequest):
 
     ends_at = datetime.fromisoformat(listing.ends_at.replace("Z", "+00:00"))
     if ends_at <= datetime.now(timezone.utc):
+        listing.status = "closed"
+        save_listings()
         raise HTTPException(
             status_code=400,
             detail="This auction has already ended and can no longer accept bids.",

@@ -7,7 +7,7 @@
 		"startingPrice": 185000.0,
 		"currentBid": 220000.0,
 		"currentBidder": "Jamey",
-		"status": "active",
+		"status": "closed",
 		"endsAt": "2026-04-11T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2019+John+Deere+8R+340+Tractor",
 		"bids": [
@@ -41,7 +41,7 @@
 		"startingPrice": 320000.0,
 		"currentBid": 320000.0,
 		"currentBidder": null,
-		"status": "active",
+		"status": "closed",
 		"endsAt": "2026-04-09T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2021+Case+IH+Axial-Flow+250+Combine",
 		"bids": []
@@ -54,7 +54,7 @@
 		"startingPrice": 45000.0,
 		"currentBid": 45000.0,
 		"currentBidder": null,
-		"status": "active",
+		"status": "closed",
 		"endsAt": "2026-04-13T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2018+Kubota+SVL75-2+Skid+Steer",
 		"bids": []
@@ -67,7 +67,7 @@
 		"startingPrice": 28000.0,
 		"currentBid": 28000.0,
 		"currentBidder": null,
-		"status": "active",
+		"status": "closed",
 		"endsAt": "2026-04-08T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2020+Kinze+1050+Grain+Cart",
 		"bids": []
@@ -80,7 +80,7 @@
 		"startingPrice": 4200.0,
 		"currentBid": 4200.0,
 		"currentBidder": null,
-		"status": "active",
+		"status": "closed",
 		"endsAt": "2026-04-15T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=Frontier+RC2060+Rotary+Cutter",
 		"bids": []
@@ -93,7 +93,7 @@
 		"startingPrice": 72000.0,
 		"currentBid": 72000.0,
 		"currentBidder": null,
-		"status": "active",
+		"status": "closed",
 		"endsAt": "2026-04-10T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2017+New+Holland+T6.180+Tractor",
 		"bids": []
@@ -106,7 +106,7 @@
 		"startingPrice": 38500.0,
 		"currentBid": 38500.0,
 		"currentBidder": null,
-		"status": "active",
+		"status": "closed",
 		"endsAt": "2026-04-12T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2022+Landoll+7431+Field+Cultivator",
 		"bids": []
