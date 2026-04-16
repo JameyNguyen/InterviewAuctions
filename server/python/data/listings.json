@@ -5,11 +5,23 @@
 		"description": "High-horsepower row-crop tractor with IVT transmission, 4WD, and 370 hp engine. Excellent condition with 1,850 hours. Fully equipped with precision ag technology.",
 		"category": "tractor",
 		"startingPrice": 185000.0,
-		"currentBid": 185000.0,
-		"currentBidder": null,
+		"currentBid": 210000.0,
+		"currentBidder": "Jamey",
 		"status": "active",
 		"endsAt": "2026-04-11T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=2019+John+Deere+8R+340+Tractor"
+		"imageUrl": "https://placehold.co/400x300?text=2019+John+Deere+8R+340+Tractor",
+		"bids": [
+			{
+				"bidder_name": "Jamey",
+				"amount": 200000.0,
+				"placed_at": "2026-04-16T00:26:12.783647+00:00"
+			},
+			{
+				"bidder_name": "Evil Jamey",
+				"amount": 210000.0,
+				"placed_at": "2026-04-16T00:26:45.511291+00:00"
+			}
+		]
 	},
 	{
 		"id": "a1b2c3d4-0002-4000-8000-ef1234567890",
@@ -21,7 +33,8 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-09T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=2021+Case+IH+Axial-Flow+250+Combine"
+		"imageUrl": "https://placehold.co/400x300?text=2021+Case+IH+Axial-Flow+250+Combine",
+		"bids": []
 	},
 	{
 		"id": "a1b2c3d4-0003-4000-8000-ef1234567890",
@@ -33,7 +46,8 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-13T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=2018+Kubota+SVL75-2+Skid+Steer"
+		"imageUrl": "https://placehold.co/400x300?text=2018+Kubota+SVL75-2+Skid+Steer",
+		"bids": []
 	},
 	{
 		"id": "a1b2c3d4-0004-4000-8000-ef1234567890",
@@ -45,7 +59,8 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-08T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=2020+Kinze+1050+Grain+Cart"
+		"imageUrl": "https://placehold.co/400x300?text=2020+Kinze+1050+Grain+Cart",
+		"bids": []
 	},
 	{
 		"id": "a1b2c3d4-0005-4000-8000-ef1234567890",
@@ -57,7 +72,8 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-15T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=Frontier+RC2060+Rotary+Cutter"
+		"imageUrl": "https://placehold.co/400x300?text=Frontier+RC2060+Rotary+Cutter",
+		"bids": []
 	},
 	{
 		"id": "a1b2c3d4-0006-4000-8000-ef1234567890",
@@ -69,7 +85,8 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-10T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=2017+New+Holland+T6.180+Tractor"
+		"imageUrl": "https://placehold.co/400x300?text=2017+New+Holland+T6.180+Tractor",
+		"bids": []
 	},
 	{
 		"id": "a1b2c3d4-0007-4000-8000-ef1234567890",
@@ -81,7 +98,8 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-12T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=2022+Landoll+7431+Field+Cultivator"
+		"imageUrl": "https://placehold.co/400x300?text=2022+Landoll+7431+Field+Cultivator",
+		"bids": []
 	},
 	{
 		"id": "a1b2c3d4-0008-4000-8000-ef1234567890",
@@ -93,7 +111,8 @@
 		"currentBidder": null,
 		"status": "closed",
 		"endsAt": "2026-04-05T12:00:00.000Z",
-		"imageUrl": "https://placehold.co/400x300?text=2016+MacDon+FD75+Draper+Header"
+		"imageUrl": "https://placehold.co/400x300?text=2016+MacDon+FD75+Draper+Header",
+		"bids": []
 	},
 	{
 		"id": "e923aef3-42c3-4f14-9607-293202abfc94",
@@ -105,7 +124,8 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-16T12:00:00+00:00",
-		"imageUrl": ""
+		"imageUrl": "",
+		"bids": []
 	},
 	{
 		"id": "9da374d5-9d61-4f51-a104-f8449d2fd76d",
@@ -117,6 +137,7 @@
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-17T14:00:00+00:00",
-		"imageUrl": ""
+		"imageUrl": "",
+		"bids": []
 	}
 ]

@@ -13,6 +13,11 @@ from pydantic.alias_generators import to_camel
 # Models
 # ============================================================
 
+#Made by Jamey; its a Bid designed for keeping history of bids.
+class Bid(BaseModel):
+    bidder_name: str
+    amount: float
+    placed_at: str
 
 class Listing(BaseModel):
     """Wire JSON matches the TypeScript server (camelCase keys)."""
@@ -32,6 +37,7 @@ class Listing(BaseModel):
     status: Literal["active", "closed", "pending"]
     ends_at: str
     image_url: str
+    bids: list[Bid] = []
 
 
 class BidRequest(BaseModel):
@@ -147,6 +153,7 @@ def create_listing(body: CreateListingRequest):
         status="active",
         ends_at=ends_at.astimezone(timezone.utc).isoformat(),
         image_url="",
+        bids=[],
     )
     listings.append(listing)
     save_listings()
@@ -199,6 +206,11 @@ def place_bid(listing_id: str, bid: BidRequest):
         )
 
     listing.current_bid = bid.amount
+    listing.bids.append(Bid(
+        bidder_name=bid.bidder.strip(),
+        amount=bid.amount,
+        placed_at=datetime.now(timezone.utc).isoformat(),
+    ))
     save_listings()
     listing.current_bidder = bid.bidder.strip()
 
