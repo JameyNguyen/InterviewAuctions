@@ -130,12 +130,18 @@
 		"description": "Hello there",
 		"category": "tractor",
 		"startingPrice": 676767.0,
-		"currentBid": 676767.0,
+		"currentBid": 67676767.0,
 		"currentBidder": null,
 		"status": "active",
 		"endsAt": "2026-04-16T12:00:00+00:00",
 		"imageUrl": "",
-		"bids": []
+		"bids": [
+			{
+				"bidderName": "Millionaire Jamey",
+				"amount": 67676767.0,
+				"placedAt": "2026-04-16T01:42:31.773840+00:00"
+			}
+		]
 	},
 	{
 		"id": "9da374d5-9d61-4f51-a104-f8449d2fd76d",
@@ -144,7 +150,7 @@
 		"category": "combine",
 		"startingPrice": 12345.0,
 		"currentBid": 151000.0,
-		"currentBidder": "test",
+		"currentBidder": "LastTest",
 		"status": "active",
 		"endsAt": "2026-04-17T14:00:00+00:00",
 		"imageUrl": "",
@@ -163,6 +169,25 @@
 				"bidderName": "LastTest",
 				"amount": 151000.0,
 				"placedAt": "2026-04-16T01:27:18.619695+00:00"
+			}
+		]
+	},
+	{
+		"id": "733e5b9d-49c1-4975-8e0e-cfc5b10eda1e",
+		"title": "Big Tractor Test",
+		"description": "Tested at 8:30.",
+		"category": "attachment",
+		"startingPrice": 634000.0,
+		"currentBid": 676767.0,
+		"currentBidder": null,
+		"status": "active",
+		"endsAt": "2026-04-29T12:00:00+00:00",
+		"imageUrl": "",
+		"bids": [
+			{
+				"bidderName": "Evil Jamey",
+				"amount": 676767.0,
+				"placedAt": "2026-04-16T01:31:32.170273+00:00"
 			}
 		]
 	}

@@ -28,6 +28,10 @@ export default function ListingDetail({ listing, onBidSuccess }: Props) {
   const sortedBids = [...listing.bids].reverse();
   const displayedBids = sortedBids.slice(0, showBidsCount);
   const hasMoreBids = sortedBids.length > showBidsCount;
+  const hasEnded =
+    listing.status === "closed" ||
+    new Date(listing.endsAt).getTime() <= Date.now();
+
   return (
     <div className="listing-detail">
       {listing.imageUrl && (
@@ -73,8 +77,10 @@ export default function ListingDetail({ listing, onBidSuccess }: Props) {
         </div>
       </div>
 
-      {listing.status === "active" && (
+      {!hasEnded && listing.status === "active" ? (
         <BidForm listing={listing} onBidSuccess={onBidSuccess} />
+      ) : (
+        <div className="state-message">Bidding is closed for this auction.</div>
       )}
 
       <section className="listing-detail__history">

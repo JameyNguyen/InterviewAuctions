@@ -193,6 +193,13 @@ def place_bid(listing_id: str, bid: BidRequest):
             status_code=400, detail="This listing is not currently active"
         )
 
+    ends_at = datetime.fromisoformat(listing.ends_at.replace("Z", "+00:00"))
+    if ends_at <= datetime.now(timezone.utc):
+        raise HTTPException(
+            status_code=400,
+            detail="This auction has already ended and can no longer accept bids.",
+        )
+
     if not bid.bidder or not bid.bidder.strip():
         raise HTTPException(status_code=400, detail="Bidder name is required")
 
