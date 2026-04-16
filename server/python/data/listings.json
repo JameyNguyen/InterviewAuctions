@@ -5,21 +5,31 @@
 		"description": "High-horsepower row-crop tractor with IVT transmission, 4WD, and 370 hp engine. Excellent condition with 1,850 hours. Fully equipped with precision ag technology.",
 		"category": "tractor",
 		"startingPrice": 185000.0,
-		"currentBid": 210000.0,
-		"currentBidder": "Jamey",
+		"currentBid": 220000.0,
+		"currentBidder": "Evil Jamey",
 		"status": "active",
 		"endsAt": "2026-04-11T12:00:00.000Z",
 		"imageUrl": "https://placehold.co/400x300?text=2019+John+Deere+8R+340+Tractor",
 		"bids": [
 			{
-				"bidder_name": "Jamey",
+				"bidderName": "Jamey",
 				"amount": 200000.0,
-				"placed_at": "2026-04-16T00:26:12.783647+00:00"
+				"placedAt": "2026-04-16T00:26:12.783647+00:00"
 			},
 			{
-				"bidder_name": "Evil Jamey",
+				"bidderName": "Evil Jamey",
 				"amount": 210000.0,
-				"placed_at": "2026-04-16T00:26:45.511291+00:00"
+				"placedAt": "2026-04-16T00:26:45.511291+00:00"
+			},
+			{
+				"bidderName": "BidHistoryTest",
+				"amount": 215000.0,
+				"placedAt": "2026-04-16T00:39:01.695283+00:00"
+			},
+			{
+				"bidderName": "Jamey",
+				"amount": 220000.0,
+				"placedAt": "2026-04-16T01:19:22.013210+00:00"
 			}
 		]
 	},
@@ -133,11 +143,22 @@
 		"description": "Hello guys",
 		"category": "combine",
 		"startingPrice": 12345.0,
-		"currentBid": 12345.0,
-		"currentBidder": null,
+		"currentBid": 150000.0,
+		"currentBidder": "test",
 		"status": "active",
 		"endsAt": "2026-04-17T14:00:00+00:00",
 		"imageUrl": "",
-		"bids": []
+		"bids": [
+			{
+				"bidderName": "hello",
+				"amount": 134677.0,
+				"placedAt": "2026-04-16T00:50:36.478828+00:00"
+			},
+			{
+				"bidderName": "test",
+				"amount": 150000.0,
+				"placedAt": "2026-04-16T01:11:56.442295+00:00"
+			}
+		]
 	}
 ]

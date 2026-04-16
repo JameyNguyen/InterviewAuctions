@@ -450,3 +450,76 @@ body {
 .filter-input::placeholder {
 	color: #aaa;
 }
+
+/* ============================================================
+   Bid History
+   ============================================================ */
+.bid-history {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.bid-history__item {
+	padding: 12px 14px;
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 6px;
+	transition: all 0.15s;
+}
+
+.bid-history__item:hover {
+	border-color: #2596be;
+	box-shadow: 0 2px 8px #2596be15;
+}
+
+.bid-history__content {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 0.9rem;
+}
+
+.bid-history__bidder {
+	font-weight: 600;
+	color: #0d3d52;
+	min-width: 60px;
+}
+
+.bid-history__separator {
+	color: #ccc;
+	font-size: 0.8rem;
+}
+
+.bid-history__amount {
+	font-weight: 700;
+	color: #2596be;
+	min-width: 80px;
+}
+
+.bid-history__time {
+	color: #777;
+	font-size: 0.85rem;
+	margin-left: auto;
+}
+
+.bid-history__load-more {
+	width: 100%;
+	padding: 10px 12px;
+	margin-top: 8px;
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #0d3d52;
+	cursor: pointer;
+	transition: all 0.15s;
+}
+
+.bid-history__load-more:hover {
+	background: #2596be;
+	color: #fff;
+	border-color: #2596be;
+}

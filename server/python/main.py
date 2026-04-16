@@ -15,9 +15,14 @@ from pydantic.alias_generators import to_camel
 
 #Made by Jamey; its a Bid designed for keeping history of bids.
 class Bid(BaseModel):
-    bidder_name: str
+    model_config = ConfigDict(
+        populate_by_name=True,
+        alias_generator=to_camel,
+    )
+    
+    bidderName: str
     amount: float
-    placed_at: str
+    placedAt: str
 
 class Listing(BaseModel):
     """Wire JSON matches the TypeScript server (camelCase keys)."""
@@ -207,9 +212,9 @@ def place_bid(listing_id: str, bid: BidRequest):
 
     listing.current_bid = bid.amount
     listing.bids.append(Bid(
-        bidder_name=bid.bidder.strip(),
+        bidderName=bid.bidder.strip(),
         amount=bid.amount,
-        placed_at=datetime.now(timezone.utc).isoformat(),
+        placedAt=datetime.now(timezone.utc).isoformat(),
     ))
     save_listings()
     listing.current_bidder = bid.bidder.strip()

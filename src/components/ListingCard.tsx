@@ -28,11 +28,13 @@ export default function ListingCard({ listing, isSelected, onClick }: Props) {
 			tabIndex={0}
 			onKeyDown={(e) => e.key === "Enter" && onClick()}
 		>
-			<img
-				src={listing.imageUrl}
-				alt={listing.title}
-				className="listing-card__image"
-			/>
+			{listing.imageUrl && (
+				<img
+					src={listing.imageUrl}
+					alt={listing.title}
+					className="listing-card__image"
+				/>
+			)}
 			<div className="listing-card__body">
 				<span className={`badge badge--${listing.category}`}>
 					{listing.category}
