@@ -106,5 +106,17 @@
 		"status": "active",
 		"endsAt": "2026-04-16T12:00:00+00:00",
 		"imageUrl": ""
+	},
+	{
+		"id": "9da374d5-9d61-4f51-a104-f8449d2fd76d",
+		"title": "Test verson2",
+		"description": "Hello guys",
+		"category": "combine",
+		"startingPrice": 12345.0,
+		"currentBid": 12345.0,
+		"currentBidder": null,
+		"status": "active",
+		"endsAt": "2026-04-17T14:00:00+00:00",
+		"imageUrl": ""
 	}
 ]

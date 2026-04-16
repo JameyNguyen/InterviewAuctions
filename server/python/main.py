@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Literal, Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict
 from pydantic.alias_generators import to_camel
@@ -88,8 +88,27 @@ app.add_middleware(
     response_model=list[Listing],
     response_model_by_alias=True,
 )
-def get_listings():
-    return listings
+def get_listings(
+    search: Optional[str] = Query(None),
+    category: Optional[str] = Query(None),
+):
+    filtered = listings
+    
+    # Filter by category if provided
+    if category:
+        category = category.lower()
+        if category in ["tractor", "combine", "implement", "attachment"]:
+            filtered = [l for l in filtered if l.category == category]
+    
+    # Filter by search text (title or description)
+    if search:
+        search_lower = search.lower()
+        filtered = [
+            l for l in filtered
+            if search_lower in l.title.lower() or search_lower in l.description.lower()
+        ]
+    
+    return filtered
 
 
 @app.post(
